@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where node:*)",
+      "Bash(powershell.exe -Command \"[System.Environment]::SetEnvironmentVariable\\('Path', [System.Environment]::GetEnvironmentVariable\\('Path','User'\\) + ';C:\\\\Program Files\\\\nodejs', 'User'\\)\")"
+    ]
+  }
+}
