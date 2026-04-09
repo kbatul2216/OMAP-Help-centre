@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>OMAP Help Center</title>
+<link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<!-- ══ TOPNAV ══ -->
+<nav class="topnav">
+  <div class="logo" onclick="nav('home')">
+    <div class="logo-mark">
+      <svg viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="13" stroke="white" stroke-width="2.2" fill="none"/>
+        <circle cx="16" cy="16" r="6.5" stroke="white" stroke-width="1.8" fill="none"/>
+        <circle cx="9" cy="16" r="2.5" fill="white"/>
+      </svg>
+    </div>
+    <div class="logo-wordmark"><span class="top">OMAP™</span><span class="sub">BY ALTA·DX</span></div>
+  </div>
+  <div class="nav-search">
+    <span class="nav-search-ico">🔍</span>
+    <input type="text" id="topSearch" placeholder="Search pages, agents, settings…"/>
+  </div>
+  <div class="tnav">
+    <span class="tn act" onclick="nav('home')">Home</span>
+    <span class="tn" onclick="nav('getting-started')">Get started</span>
+    <span class="tn" onclick="nav('faq')">FAQ</span>
+  </div>
+</nav>
+
+<div class="layout">
+
+<!-- ══════════════════════════════════════════════
+     SIDEBAR — Full hierarchical navigation
+══════════════════════════════════════════════ -->
+<aside class="sidebar" id="sidebar">
+
+  <!-- ─ PLATFORM ─ -->
+  <div class="sb-section-lbl">Platform</div>
+  <div class="sb-l1" data-p="home" onclick="nav('home')"><span class="l1-ico">🏠</span>Overview</div>
+
+  <!-- Getting Started -->
+  <div class="sb-l1" id="l1-gs" onclick="toggleL1('gs','getting-started')" data-p="getting-started">
+    <span class="l1-ico"></span>Getting Started<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-gs">
+    <div class="sb-l2" data-p="signup" onclick="nav('signup')">Sign Up</div>
+    <div class="sb-l2" data-p="login" onclick="nav('login')">Login</div>
+  </div>
+
+  <!-- ─ AI AGENTS ─ -->
+  <div class="sb-section-lbl">AI Agents</div>
+
+  <!-- Concierge Agent -->
+  <div class="sb-l1" id="l1-concierge" onclick="toggleL1('concierge','concierge-overview')" data-p="concierge-overview">
+    <span class="l1-ico"></span>Concierge Agent<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-concierge">
+    <div class="sb-l2" data-p="concierge-overview" onclick="nav('concierge-overview')">Overview</div>
+
+    <div class="sb-l2" id="l2-concierge-create" onclick="toggleL2('concierge-create','concierge-create-overview')">Create an Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-concierge-create">
+      <div class="sb-l3" data-p="concierge-step1" onclick="nav('concierge-step1')">Step 1: User Interface</div>
+      <div class="sb-l3" data-p="concierge-step2" onclick="nav('concierge-step2')">Step 2: Agent Behavior</div>
+      <div class="sb-l3" data-p="concierge-step3" onclick="nav('concierge-step3')">Step 3: Knowledge Base</div>
+      <div class="sb-l3" data-p="concierge-step4" onclick="nav('concierge-step4')">Step 4: Deployment</div>
+    </div>
+
+    <div class="sb-l2" id="l2-concierge-deploy" onclick="toggleL2('concierge-deploy','concierge-deploy-overview')">Test &amp; Deploy<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-concierge-deploy">
+      <div class="sb-l3" data-p="concierge-deploy-overview" onclick="nav('concierge-deploy-overview')">Overview</div>
+      <div class="sb-l3" data-p="concierge-test" onclick="nav('concierge-test')">Test Agent</div>
+      <div class="sb-l3" data-p="concierge-preview" onclick="nav('concierge-preview')">Website Preview</div>
+      <div class="sb-l3" data-p="concierge-deploy" onclick="nav('concierge-deploy')">Agent Deployment</div>
+    </div>
+
+    <div class="sb-l2" id="l2-concierge-edit" onclick="toggleL2('concierge-edit','concierge-edit-overview')">Edit Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-concierge-edit">
+      <div class="sb-l3" data-p="concierge-edit-overview" onclick="nav('concierge-edit-overview')">Overview</div>
+    </div>
+
+    <div class="sb-l2" data-p="concierge-logs" onclick="nav('concierge-logs')">Conversation Logs</div>
+
+    <div class="sb-l2" id="l2-concierge-settings" onclick="toggleL2('concierge-settings','')">Settings<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-concierge-settings">
+      <div class="sb-l3" data-p="concierge-refresh" onclick="nav('concierge-refresh')">Refresh Agent</div>
+      <div class="sb-l3" data-p="concierge-api" onclick="nav('concierge-api')">Custom API</div>
+      <div class="sb-l3" data-p="concierge-versions" onclick="nav('concierge-versions')">Version History</div>
+    </div>
+
+    <div class="sb-l2" id="l2-concierge-analytics" onclick="toggleL2('concierge-analytics','')">Analytics<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-concierge-analytics">
+      <div class="sb-l3" data-p="concierge-dashboard" onclick="nav('concierge-dashboard')">Dashboard</div>
+    </div>
+  </div>
+
+  <!-- L&D Agent -->
+  <div class="sb-l1" id="l1-ld" onclick="toggleL1('ld','ld-overview')" data-p="ld-overview">
+    <span class="l1-ico"></span>L&amp;D Agent<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-ld">
+    <div class="sb-l2" data-p="ld-overview" onclick="nav('ld-overview')">Overview</div>
+    <div class="sb-l2" id="l2-ld-create" onclick="toggleL2('ld-create','')">Create an Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-ld-create">
+      <div class="sb-l3" data-p="ld-step1" onclick="nav('ld-step1')">Step 1: Agent Profile</div>
+      <div class="sb-l3" data-p="ld-step2" onclick="nav('ld-step2')">Step 2: Knowledge Base</div>
+    </div>
+    <div class="sb-l2" data-p="ld-chat" onclick="nav('ld-chat')">L&amp;D Chat</div>
+    <div class="sb-l2" id="l2-ld-edit" onclick="toggleL2('ld-edit','')">Edit Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-ld-edit">
+      <div class="sb-l3" data-p="ld-edit-overview" onclick="nav('ld-edit-overview')">Overview</div>
+    </div>
+    <div class="sb-l2" data-p="ld-logs" onclick="nav('ld-logs')">Conversation Logs</div>
+    <div class="sb-l2" id="l2-ld-settings" onclick="toggleL2('ld-settings','')">Settings<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-ld-settings">
+      <div class="sb-l3" data-p="ld-invite" onclick="nav('ld-invite')">Invite Members</div>
+    </div>
+    <div class="sb-l2" id="l2-ld-analytics" onclick="toggleL2('ld-analytics','')">Analytics<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-ld-analytics">
+      <div class="sb-l3" data-p="ld-dashboard" onclick="nav('ld-dashboard')">Dashboard</div>
+    </div>
+  </div>
+
+  <!-- Collections Agent -->
+  <div class="sb-l1" id="l1-col" onclick="toggleL1('col','col-overview')" data-p="col-overview">
+    <span class="l1-ico"></span>Collections Agent<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-col">
+    <div class="sb-l2" data-p="col-overview" onclick="nav('col-overview')">Overview</div>
+    <div class="sb-l2" id="l2-col-create" onclick="toggleL2('col-create','')">Create an Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-col-create">
+      <div class="sb-l3" data-p="col-step1" onclick="nav('col-step1')">Step 1: Agent UI</div>
+      <div class="sb-l3" data-p="col-step2" onclick="nav('col-step2')">Step 2: Outreach Config</div>
+      <div class="sb-l3" data-p="col-step3" onclick="nav('col-step3')">Step 3: Email Template</div>
+    </div>
+    <div class="sb-l2" data-p="col-pastdues" onclick="nav('col-pastdues')">Past Dues</div>
+    <div class="sb-l2" id="l2-col-settings" onclick="toggleL2('col-settings','')">Settings<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-col-settings">
+      <div class="sb-l3" data-p="col-outreach" onclick="nav('col-outreach')">Outreach</div>
+      <div class="sb-l3" data-p="col-templates" onclick="nav('col-templates')">Templates</div>
+      <div class="sb-l3" data-p="col-import" onclick="nav('col-import')">Manual Dues Import</div>
+      <div class="sb-l3" data-p="col-clubs" onclick="nav('col-clubs')">Club Locations</div>
+    </div>
+    <div class="sb-l2" id="l2-col-analytics" onclick="toggleL2('col-analytics','')">Analytics<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-col-analytics">
+      <div class="sb-l3" data-p="col-dashboard" onclick="nav('col-dashboard')">Dashboard</div>
+    </div>
+  </div>
+
+  <!-- Member Audit Agent -->
+  <div class="sb-l1" id="l1-audit" onclick="toggleL1('audit','audit-overview')" data-p="audit-overview">
+    <span class="l1-ico"></span>Member Audit Agent<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-audit">
+    <div class="sb-l2" data-p="audit-overview" onclick="nav('audit-overview')">Overview</div>
+
+    <div class="sb-l2" id="l2-audit-create" onclick="toggleL2('audit-create','')">Create an Agent<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-audit-create">
+      <div class="sb-l3" data-p="audit-configure" onclick="nav('audit-configure')">Configure Member Audit</div>
+    </div>
+
+    <div class="sb-l2" data-p="audit-edit" onclick="nav('audit-edit')">Edit Agent</div>
+
+    <div class="sb-l2" id="l2-audit-analytics" onclick="toggleL2('audit-analytics','')">Analytics<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-audit-analytics">
+      <div class="sb-l3" data-p="audit-dashboard" onclick="nav('audit-dashboard')">Dashboard</div>
+    </div>
+  </div>
+
+  <!-- ─ SETTINGS ─ -->
+  <div class="sb-section-lbl">Settings</div>
+
+  <!-- Integration -->
+  <div class="sb-l1" id="l1-int" onclick="toggleL1('int','int-overview')" data-p="int-overview">
+    <span class="l1-ico">🔗</span>Integration<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-int">
+    <div class="sb-l2" data-p="int-overview" onclick="nav('int-overview')">Overview</div>
+
+    <div class="sb-l2" id="l2-int-mrm" onclick="toggleL2('int-mrm','')">MRMs<span class="sb-arr">›</span></div>
+    <div class="sb-l3-wrap" id="l3-int-mrm">
+      <div class="sb-l3" data-p="int-abc" onclick="nav('int-abc')">ABC Ignite</div>
+      <div class="sb-l3" data-p="int-daxko" onclick="nav('int-daxko')">Daxko Operations</div>
+      <div class="sb-l3" data-p="int-clubauto" onclick="nav('int-clubauto')">Club Automation</div>
+    </div>
+
+    <div class="sb-l2" data-p="int-crm" onclick="nav('int-crm')">CRMs</div>
+    <div class="sb-l2" data-p="int-storage" onclick="nav('int-storage')">Storage</div>
+  </div>
+
+  <!-- User Management -->
+  <div class="sb-l1" id="l1-users" onclick="toggleL1('users','users-overview')" data-p="users-overview">
+    <span class="l1-ico">👥</span>User Management<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-users">
+    <div class="sb-l2" data-p="users-overview" onclick="nav('users-overview')">Overview</div>
+  </div>
+
+  <!-- Roles & Permissions -->
+  <div class="sb-l1" id="l1-roles" onclick="toggleL1('roles','roles-overview')" data-p="roles-overview">
+    <span class="l1-ico">🔐</span>Roles &amp; Permissions<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-roles">
+    <div class="sb-l2" data-p="roles-overview" onclick="nav('roles-overview')">Overview</div>
+  </div>
+
+  <!-- Billing -->
+  <div class="sb-l1" id="l1-billing" onclick="toggleL1('billing','billing-overview')" data-p="billing-overview">
+    <span class="l1-ico">💳</span>Billing &amp; Subscription<span class="sb-arr">›</span>
+  </div>
+  <div class="sb-l2-wrap" id="l2-billing">
+    <div class="sb-l2" data-p="billing-overview" onclick="nav('billing-overview')">Overview</div>
+  </div>
+
+  <!-- ─ REFERENCE ─ -->
+  <div class="sb-section-lbl">Reference</div>
+  <div class="sb-l1" data-p="faq" onclick="nav('faq')"><span class="l1-ico">❓</span>FAQs</div>
+
+</aside>
+
+<!-- ══ MAIN CONTENT ══ -->
+<main class="main">
+  <div id="home-sr-box" style="display:none;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r12);padding:18px 22px;margin-bottom:18px;box-shadow:0 4px 18px rgba(0,0,0,0.07)">
+    <div style="font-size:var(--fs-h3);font-weight:800;color:var(--txt-head);margin-bottom:4px">Search results</div>
+    <div style="font-size:var(--fs-small);color:var(--txt-muted);margin-bottom:12px;padding-bottom:10px;border-bottom:1.5px solid var(--border)" id="home-sr-count"></div>
+    <div id="home-sr-list"></div>
+  </div>
+  <div id="page-container"></div>
+</main>
+</div>
+
+<script src="js/search-index.js"></script>
+<script src="js/app.js"></script>
+<script src="js/router.js"></script>
+</body>
+</html>

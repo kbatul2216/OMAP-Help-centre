@@ -1,0 +1,19 @@
+  <div class="bc"><span class="bcl" onclick="nav('home')">Home</span><span class="bcs">/</span><span class="bcl" onclick="nav('int-overview')">Integration</span><span class="bcs">/</span><span class="bcl">MRMs</span><span class="bcs">/</span><span class="bcc">ABC Ignite</span></div>
+  <div class="hero light"><div class="hero-badge hb-crimson">🔗 ABC Ignite</div><h1>ABC Ignite Integration</h1><p>Two connection paths depending on whether you already have an App ID and App Key.</p></div>
+  <div class="sbox"><div class="sbox-title">Two connection flows</div><div class="sbox-sub">Select the appropriate path based on your credentials.</div>
+    <div class="flow-grid">
+      <div class="flow-card yes"><h4>✅ YES — I have credentials</h4><p>Enter App ID + App Key (masked). Add Club IDs as chips. Click Test Connection. Green chips = connected, Yellow = under review, Red = failed. Fix red chips and re-test. Click Connect when all pass.</p></div>
+      <div class="flow-card no"><h4>🔄 NO — I need authorization</h4><p>Enter Club IDs. Click Authorize. Complete the ABC Fitness authorization form (org name, vendor, Club IDs, access type). Click Send Request. Status shows "Under Review" until approved by the internal team.</p></div>
+    </div>
+    <div style="background:var(--surface2);border:1.5px solid var(--border);border-radius:var(--r8);overflow:hidden;margin-top:8px">
+      <div style="padding:8px 14px;font-size:10px;font-weight:800;color:var(--txt-muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1.5px solid var(--border)">Club ID chip status</div>
+      <div class="status-row"><div class="sdot" style="background:var(--green)"></div><span class="tag tg" style="min-width:82px">Green</span><span style="margin-left:12px;font-size:13px;color:var(--txt);font-weight:500">Successfully verified and active</span></div>
+      <div class="status-row"><div class="sdot" style="background:var(--amber)"></div><span class="tag ta" style="min-width:82px">Yellow</span><span style="margin-left:12px;font-size:13px;color:var(--txt);font-weight:500">Pending validation — check back shortly</span></div>
+      <div class="status-row"><div class="sdot" style="background:var(--red)"></div><span class="tag tr" style="min-width:82px">Red</span><span style="margin-left:12px;font-size:13px;color:var(--txt);font-weight:500">Remove chip, verify ID, and re-test</span></div>
+    </div>
+  </div>
+  <div class="faq-section"><div class="faq-title">❓ FAQs — ABC Ignite</div><div class="faq-sub">Common questions</div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-q-text">A Club ID chip turned red — what do I do?</span><span class="faq-arr">▼</span></div><div class="faq-a">Remove the red chip by clicking X, verify the Club ID with your MRM provider, re-enter it, and click Test Connection again.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="faq(this)"><span class="faq-q-text">What does Resync do?</span><span class="faq-arr">▼</span></div><div class="faq-a">Resync fetches the latest club list from ABC Ignite and adds newly created clubs without removing existing ones or changing toggle states.</div></div>
+  </div>
+  <div class="feedback"><p>Was this helpful?</p><div class="fb-btns"><button class="fb-btn yes" onclick="fbOk(this,'yes')">👍 Yes</button><button class="fb-btn no" onclick="fbOk(this,'no')">👎 No</button></div></div>
