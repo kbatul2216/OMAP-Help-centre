@@ -1,0 +1,21 @@
+Notifications list 
+
+1. welcome meassage  
+2. agent created ( ur agent is live)
+3. when MRM is connected 
+4. agents updates( verstion update)
+   - auto refresh 
+   - manual refresh 
+   - 
+5. in concierge agent when the trie period is ending.
+6. edit Profile ??
+7. admit note resloved 
+8. if the user make changes in the MRM edit flow 
+9. dashboard is ready( member Audit) 
+10.sub domain( collection agent ) 
+11.upcoming agents 
+12. dashboard 
+13.Agent Knowledge Base Refreshed
+14. Invited User Joined
+
+ 
